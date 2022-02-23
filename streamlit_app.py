@@ -1,24 +1,17 @@
 import streamlit as st
 import streamlit_book as stb
+from pathlib import Path
 
-# Set wide display
-st.set_page_config(layout="wide")
+def main():
+    # Set wide display
+    st.set_page_config(layout="wide")
 
-# Set multipage
-save_answers = False
-stb.set_library_config(menu_title="App Title",
-                       menu_icon="apple",
-                       options=[
-                                "Intro",   
-                                "Multitest", 
-                                ], 
-                       paths=[
-                                "pages/Intro.py", 
-                                "pages/00 Multitest", 
-                            ],
-                       icons=[
-                                "tree", 
-                                "code", 
-                            ],
-                       save_answers=save_answers,
-                       )
+    # Set multipage
+    save_answers = True
+    current_path = Path(__file__).parent.absolute()
+    path = current_path / "pages" 
+    stb.set_chapter_config(path=path, save_answers=save_answers)
+
+
+if __name__ == "__main__":
+    main()
