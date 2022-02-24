@@ -4,7 +4,7 @@ from pathlib import Path
 
 def main():
     # Set wide display
-    st.set_page_config(layout="wide")
+    st.set_page_config(layout="wide", page_icon="📓", page_title="Book Demo 0.7.0")
 
     # Set multipage
     save_answers = True
